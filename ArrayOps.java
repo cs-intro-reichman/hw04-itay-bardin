@@ -1,11 +1,12 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] arrCheck = {0,1,2,3,5,6};
+        int [] arrCheck = {0};
         int [] arrCheck2 = {0,0,0,0,1,5,6,1,2,3,5,6};
         System.out.println(contains(arrCheck, 0));
         System.out.println(findMissingInt(arrCheck));
         System.out.println(secondMaxValue(arrCheck));
         System.out.println(containsTheSameElements(arrCheck, arrCheck2));
+        System.out.println(isSorted(arrCheck));
     }
     public static boolean contains (int [] array, int n){
         boolean isContained = false;
@@ -17,6 +18,9 @@ public class ArrayOps {
         return isContained;
     }
     public static int findMissingInt (int [] array) {
+        if (array.length <= 1) {
+            return array.length;
+        }
         int missingInt = 0;
         for(int i = 0; i < array.length; i++){
                 if (!contains(array, i)) {
@@ -30,7 +34,7 @@ public class ArrayOps {
         int max = array[0];
         int secondMax = array[0];
         for(int i = 1; i < array.length; i++){
-            if (array[i] > max){
+            if (array[i] >= max){
                 secondMax = max;
                 max = array[i];
             }
@@ -58,8 +62,23 @@ public class ArrayOps {
     }
 
     public static boolean isSorted(int [] array) {
-        // Write your code here:
-        return false;
+        boolean isSorted = true;
+        int currentValue = array[0];
+         for(int i = 1; i < array.length-1; i++){
+            if (array[i] >= currentValue) {
+                if (!(array[i+1] >= array[i])) {
+                    isSorted = false;
+                }
+                currentValue = array[i];
+            }
+            else if (array[i] < currentValue) {
+                if (!(array[i+1] <= array[i])) {
+                    isSorted = false;
+                }
+                currentValue = array[i];
+            }
+        }
+        return isSorted;
     }
-
 }
+
