@@ -172,7 +172,7 @@
         "points": 5
       },
       {
-        "name": "StringOps - camelCase Test 3 (Input: \" tWo     wordS\")",
+        "name": "StringOps - camelCase Test 3 (Input: \" tWo wordS\")",
         "setup": "javac TesterStringOps.java",
         "run": "java TesterStringOps camelCase 3",
         "input": "",
