@@ -22,7 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String strCheck = "   Hello";
+        String strCheck = "One two tHRee world";
+        System.out.println(capVowelsLowRest(strCheck));
         System.out.println(camelCase(strCheck));
     }
 
@@ -39,10 +40,10 @@ public class StringOps {
         String str = "";
         for(int i = 0; i < string.length(); i++){
             char currentChar = string.charAt(i);
-            if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'e') {
+            if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u') {
                 str += (char)(currentChar - 32);
             }
-            else if(currentChar == ' '){
+            else if(currentChar == ' ' || currentChar == 'A' || currentChar == 'E' || currentChar == 'I' || currentChar == 'O' || currentChar == 'U'){
                 str += currentChar;
             }
             else {
