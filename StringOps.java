@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String strCheck = "One two tHRee world";
+        String strCheck = "  tWo wordS";
         System.out.println(capVowelsLowRest(strCheck));
         System.out.println(camelCase(strCheck));
     }
@@ -86,7 +86,7 @@ public class StringOps {
                 String currentWord = noInitialSpaceString.substring(lastSpaceIndex + 1, i);
                 str += toCamelCase(currentWord);
                 currentWord = "";
-                lastSpaceIndex = i;
+                lastSpaceIndex++;
             }
         }
         if (lastSpaceIndex < (noInitialSpaceString.length() -1)) {
