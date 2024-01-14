@@ -44,7 +44,7 @@ public class TesterStringOps {
         String[] testCases = {
                 "Hello World",
                 "HELLO world",
-                " tWo     wordS",
+                " tWo wordS",
                 "world",
                 "   Intro to  coMPUter   	sCIEncE   ",
                 // Add more test cases as needed
