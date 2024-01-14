@@ -22,9 +22,12 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String strCheck = "  tWo wordS";
-        System.out.println(capVowelsLowRest(strCheck));
-        System.out.println(camelCase(strCheck));
+        int[] indexes = allIndexOf("Hello world", 'l');
+        System.out.print("Indexes of 'l': ");
+        for (int index : indexes) {
+            System.out.print(index + " ");
+        }
+        System.out.println(); 
     }
 
     public static int stringToInt(String str){
@@ -130,8 +133,21 @@ public class StringOps {
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int countChar = 0;
+        for(int i = 0; i <string.length(); i++){
+            if (string.charAt(i) == chr) {
+                countChar++;
+            }
+        }
+        int [] indexChar = new int[countChar];
+        int arrayIndex = 0;
+        for(int i = 0; i < string.length(); i++){
+            if (string.charAt(i) == chr) {
+                indexChar[arrayIndex] = i;
+                arrayIndex++;
+            }
+        }
+        return indexChar;
     }
 }
 
